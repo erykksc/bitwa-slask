@@ -3,7 +3,7 @@ import { useState } from "react";
 function Fighter({ imgHref, name }: { name: string, imgHref: string }) {
     return (
         <div>
-            <img src={imgHref} style={{ maxWidth: '100%' }} />
+            <img src={imgHref} style={{ maxWidth: '100%' }} alt='Zdjęcie zawodnika'/>
             <p className=' text-center mt-2 fs-5 mb-0'>{name}</p>
         </div>
     )
@@ -28,7 +28,7 @@ export default function Fight({ fighter1, fighter2 }: { fighter1: FighterInfo, f
                 <Fighter imgHref={fighter1.imgHref} name={fighter1.name} />
             </div>
             <div className='p-0  col-2 d-flex justify-content-center align-items-center'>
-                <img src='img/vs.png' style={{ maxWidth: '70%' }} />
+                <img src='img/vs.png' style={{ maxWidth: '70%' }} alt='Zdjęcie "VS"' />
             </div>
             <div className='col-5 d-flex justify-content-start'>
                 <Fighter imgHref={fighter2.imgHref} name={fighter2.name} />

@@ -4,7 +4,6 @@ export default function Contact({ id }: SectionProps) {
 
     const phoneNumber = '+48 511 334 442';
     const email = 'bitwaoslaskboxing@gmail.com';
-    const adres = 'ul. Mickiewicza 4 Katowice 40-082';
 
     return (
         <section id={id}>

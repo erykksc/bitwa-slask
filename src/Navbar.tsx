@@ -56,7 +56,7 @@ export default function Navbar({ id, hrefs }: Props) {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
         })
-    }, [])
+    })
 
     const navElems = hrefs.map(({ href, text }, i) => {
         return (

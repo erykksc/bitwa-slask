@@ -30,12 +30,16 @@ export default function NextEvent({ id }: SectionProps) {
                 </InfoBox>
 
                 <InfoBox title='KTO' >
-                    <a className='bi-person' href='#fighters' style={{ fontSize: '5rem', color: 'white' }}></a>
+                    <a href='#fighters'>
+                        <i className='bi-person' style={{ fontSize: '5rem', color: 'white' }} />
+                    </a>
                     <a className='btn bg-white text-black rounded-pill' href='#fighters'>Zobacz zawodników</a>
                 </InfoBox>
 
                 <InfoBox title='STREAM'>
-                    <a className='bi-play-circle-fill' href={streamHref} style={{ fontSize: '5rem', color: 'white' }}></a>
+                    <a href={streamHref}>
+                        <i className='bi-play-circle-fill' style={{ fontSize: '5rem', color: 'white' }} />
+                    </a>
                     <a className='btn bg-white text-black rounded-pill' href={streamHref}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
