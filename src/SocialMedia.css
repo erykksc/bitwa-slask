@@ -1,0 +1,13 @@
+.instagram-bg {
+    background: url('../public/img/instagram-gradient.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tiktok-icon {
+    /* background: url('../public/img/tik-tok.png'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
