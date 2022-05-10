@@ -1,11 +1,9 @@
+#!/usr/bin/env python3
 import os
-from io import BytesIO
 from pathlib import Path
 from typing import List
-import pyperclip
-import requests
+
 from PIL import Image
-from pprint import pprint
 
 ROOT_DIR = Path(__file__).parent.absolute()
 
@@ -29,7 +27,10 @@ for galleryName in galleriesNames:
     galleryPath = galleriesDir/galleryName
     galleries[galleryName] = list()
 
-    for photoName in sorted(filterHiddenFiles(os.listdir(galleryPath)), reverse=True):
+    sortedPhotoNames = sorted(filterHiddenFiles(
+        os.listdir(galleryPath)), reverse=True)
+
+    for photoName in sortedPhotoNames:
         photo = Image.open(galleryPath/photoName)
         w, h = photo.size
         galleries[galleryName].append({
@@ -40,10 +41,13 @@ for galleryName in galleriesNames:
 
 # This part outputs the galllery to the GalleryImages.ts
 with open(ROOT_DIR/'src'/'GalleryImages.ts', 'w', encoding='utf8') as f:
+    f.write('export const galleries = {\n')
     for gName, imgs in galleries.items():
-        f.write(f'export const {gName} = [\n')
+        fixedGName = gName.capitalize().replace('_', ' ').replace('-', '.')
+        f.write(f'\t"{fixedGName}": [\n')
         for img in imgs:
             f.write(
-                f'\t{{ src: "{img["src"]}", width: {img["width"]}, height: {img["height"]} }},\n'
+                f'\t\t{{ src: "{img["src"]}", width: {img["width"]}, height: {img["height"]} }},\n'
             )
-        f.write(']\n\n')
+        f.write(f'\t],\n')
+    f.write('}\n')

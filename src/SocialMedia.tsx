@@ -13,7 +13,7 @@ export default function SocialMedia({ id }: SectionProps) {
                 <a href='https://www.tiktok.com/@bitwa_o_slask' className='mx-1 d-flex justify-content-center align-items-center bg-black rounded' style={{ height: '90px', aspectRatio: '1', maxWidth: '100px' }}>
                     <img src='img/tik-tok-cut.png' style={{ width: '54%' }} alt='ikona tik-toka' />
                 </a>
-                <a href='https://www.youtube.com/results?search_query=bitwa+o+slask+box' className='mx-1 d-flex justify-content-center align-items-center bg-primary rounded' style={{ height: '90px', aspectRatio: '1', maxWidth: '100px' }}>
+                <a href='https://www.youtube.com/results?search_query=bitwa+o+slask+box' className='mx-1 d-flex justify-content-center align-items-center rounded' style={{ height: '90px', aspectRatio: '1', maxWidth: '100px', background:'#D82a3b' }}>
                     <i className='bi-youtube' style={{ fontSize: '3rem', color: 'white' }} />
                 </a>
             </div>

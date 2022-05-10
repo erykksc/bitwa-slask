@@ -19,7 +19,7 @@ export default function NextEvent({ id }: SectionProps) {
     const streamHref = 'https://youtube.com';
     return (
         <section id={id}>
-            <h2 className='text-center'>Bitwa o Śląsk - Katowice</h2>
+            <h2 className='text-center'>Bitwa o Śląsk - Katowice 17.06.2022</h2>
             <section className='row pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-date' >
                     <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022</p>
@@ -58,21 +58,6 @@ export default function NextEvent({ id }: SectionProps) {
                         height: 179
                     }}
                     key='3'
-                />
-                <Fight
-                    fighter1={{
-                        name: 'Damian Stanisławski',
-                        imgHref: 'https://i.imgur.com/Xz7ixAh.jpg',
-                        weight: 80,
-                        height: 180
-                    }}
-                    fighter2={{
-                        name: 'Tomasz Goluch',
-                        imgHref: 'https://i.imgur.com/cLKKdcq.jpg',
-                        weight: 83,
-                        height: 179
-                    }}
-                    key='1'
                 />
             </section>
         </section >

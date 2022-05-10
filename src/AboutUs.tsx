@@ -1,6 +1,6 @@
 import { SectionProps } from "./interfaces";
 
-export default function AboutUs({ id, className }: SectionProps): JSX.Element {
+export default function AboutUs({ id, className }: SectionProps) {
     return (
         <section id={id} className={`page-section row ${className}`}>
             <div className='col-12 col-md-6'>
@@ -14,13 +14,13 @@ export default function AboutUs({ id, className }: SectionProps): JSX.Element {
                         <strong> "Bitwa o Śląsk"</strong>, gdzie boks olimpijski przeplata się wraz z boksem zawodowym.
                     </p>
                     <p>
-                        Dzieki takiemu połączeniu to wydarzenia sportowe nabiera na atrakcyjności zarówno
+                        Dzieki takiemu połączeniu to wydarzenie sportowe nabiera na atrakcyjności zarówno
                         dla samych zawodników jak i kibiców.
                         Nasze gale odbywały się już w takich miastach jak <strong>Katowice, Siemianowice&nbsp;Śląskie,
-                        Radzionków, Zabrze, Mysłowice</strong> gdzie mieliśmy przyjemność współpracować z władzami
+                            Radzionków, Zabrze, Mysłowice</strong> gdzie mieliśmy przyjemność współpracować z władzami
                         miasta a nasze imprezy są wizytówka boksu w regionie i całym kraju oraz poza granicami.
                         Na nasze imprezy przyjeżdżają się mierzyć zarówno zawodnicy z całej Polski jak również
-                        <strong> Ukrainy, Moldawi czy Rosji</strong>.
+                        <strong> Ukrainy, Mołdawii czy Rosji</strong>.
                     </p>
                 </div>
             </div>
