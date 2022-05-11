@@ -21,7 +21,7 @@ export default function NextEvent({ id }: SectionProps) {
         <section id={id}>
             <h2 className='text-center'>Bitwa o Śląsk - Katowice 17.06.2022</h2>
             <section className='row pt-2'>
-                <InfoBox title='KIEDY' icon='bi-calendar-date' >
+                <InfoBox title='KIEDY' icon='bi-calendar-check' >
                     <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022</p>
                 </InfoBox>
 
@@ -38,13 +38,13 @@ export default function NextEvent({ id }: SectionProps) {
 
                 <InfoBox title='STREAM'>
                     <a href={streamHref}>
-                        <i className='bi-play-circle-fill' style={{ fontSize: '5rem', color: 'white' }} />
+                        <i className='bi-play-circle' style={{ fontSize: '5rem', color: 'white' }} />
                     </a>
                     <a className='btn bg-white text-black rounded-pill' href={streamHref}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
             <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
-                <Fight
+                {/* <Fight
                     fighter1={{
                         name: 'ALANIK',
                         imgHref: 'https://storage.famemma.tv/content/31/fight-card/ALANIK_ZAWODNICY_FAME_14.png',
@@ -58,7 +58,7 @@ export default function NextEvent({ id }: SectionProps) {
                         height: 179
                     }}
                     key='3'
-                />
+                /> */}
             </section>
         </section >
     );
