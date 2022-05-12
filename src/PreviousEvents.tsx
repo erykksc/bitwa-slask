@@ -7,57 +7,71 @@ import { SectionProps } from "./interfaces";
 
 
 export default function PreviousEvents({ id }: SectionProps) {
-    const [currentPhoto, setCurrentPhoto] = useState(0);
-    const [currentGallery, setCurrentGallery] = useState(0);
-    const [viewerIsOpen, setViewerIsOpen] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false);
+    const [galleryState, setGalleryState] = useState({
+        photoIdx: 0,
+        galleryName: '',
+        viewerOpen: false,
+        imageLoaded: false
+    })
+    // const [currentPhoto, setCurrentPhoto] = useState(0);
+    // const [currentGalleryName, setCurrentGalleryName] = useState('');
+    // const [viewerIsOpen, setViewerIsOpen] = useState(false);
+    // eslint-disable-next-line
+    // const [imageLoaded, setImageLoaded] = useState(false);
 
-    const openLightbox = (event: any, { photo, index }: any, gallery: number) => {
-        setCurrentPhoto(index);
-        setCurrentGallery(gallery);
-        setViewerIsOpen(true);
+    const openLightbox = (event: any, { photo, index }: any, galleryKey: string) => {
+        setGalleryState({
+            photoIdx: index,
+            galleryName: galleryKey,
+            viewerOpen: true,
+            imageLoaded: false
+        })
     };
 
     let galleriesTags: JSX.Element[] = [];
-    Object.keys(galleries).forEach((key, i) => {
-        const photos = (galleries as any)[key];
+    Object.keys(galleries).forEach((galleryName, galleryIndex) => {
         galleriesTags.push(
-            <div key={`gallery_${i}_${key}`}>
-                <h3 className='mt-4 text-center'>{key}</h3>
+            <div key={`gallery_${galleryIndex}_${galleryName}`}>
+                <h3 className='mt-4 text-center'>{galleryName}</h3>
 
                 <PhotoGallery
-                    photos={photos}
-                    onClick={(e, p) => { openLightbox(e, p, i) }}
+                    photos={galleries[galleryName]}
+                    onClick={(event, photo) => { openLightbox(event, photo, galleryName) }}
                 />
 
-                {viewerIsOpen && currentGallery === i && (
-                    <Lightbox
-                        mainSrc={photos[currentPhoto].src}
-                        nextSrc={photos[(currentPhoto + 1) % photos.length].src}
-                        prevSrc={photos[(currentPhoto + photos.length - 1) % photos.length].src}
-                        onCloseRequest={() => { setViewerIsOpen(false); setImageLoaded(false) }}
-                        onMovePrevRequest={() =>
-                            setCurrentPhoto((currentPhoto + photos.length - 1) % photos.length)
-                        }
-                        onMoveNextRequest={() =>
-                            setCurrentPhoto((currentPhoto + 1) % photos.length)
-                        }
-                        onImageLoad={() => setImageLoaded(true)}
-                        clickOutsideToClose={true}
-                        prevLabel='Poprzednie zdjęcie'
-                        nextLabel='Następne zdjęcie'
-                        closeLabel='Zamknij'
-                        imageTitle={key}
-                    />
-                )}
+
             </div>
         )
     });
+
+    const gallery = galleries[galleryState.galleryName];
+    const currentPhoto = galleryState.photoIdx;
 
     return (
         <section id={id}>
             <h2 className='text-center'>Poprzednie wydarzenia</h2>
             {galleriesTags}
+            {galleryState.viewerOpen && (
+                <Lightbox
+                    mainSrc={gallery[currentPhoto].original}
+                    nextSrc={gallery[(currentPhoto + 1) % gallery.length].original}
+                    prevSrc={gallery[(currentPhoto + gallery.length - 1) % gallery.length].original}
+                    onCloseRequest={() => { setGalleryState({ ...galleryState, viewerOpen: false, imageLoaded: false }) }}
+                    onMovePrevRequest={() =>
+                        setGalleryState({ ...galleryState, photoIdx: (currentPhoto + gallery.length - 1) % gallery.length })
+                    }
+                    onMoveNextRequest={() =>
+                        setGalleryState({ ...galleryState, photoIdx: (currentPhoto + 1) % gallery.length })
+
+                    }
+                    clickOutsideToClose={true}
+                    prevLabel='Poprzednie zdjęcie'
+                    nextLabel='Następne zdjęcie'
+                    closeLabel='Zamknij'
+                    imageTitle={galleryState.galleryName}
+                    onImageLoad={() => setGalleryState({ ...galleryState, imageLoaded: true })}
+                />
+            )}
         </section>
     );
 }
