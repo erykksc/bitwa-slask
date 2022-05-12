@@ -2,12 +2,11 @@
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from shutil import rmtree
 from typing import Dict, List
 
 from PIL import Image
 
-THUMBNAIL_MAX_SIZE = (400, 400)
+THUMBNAIL_MAX_SIZE = (550, 550)
 ROOT_DIR = Path(__file__).parent.absolute()
 PUBLIC_DIR = ROOT_DIR/'public'
 
@@ -59,18 +58,6 @@ for galleryName in galleriesNames:
                 height=h,
             )
         )
-
-# # This part generates thumbnails and saves them to correct location
-# print('GENERATING THUMBNAILS')
-# for gName, imgs in galleries.items():
-#     thumbnailDir: Path = galleriesDir/gName/'thumbnails'
-#     rmtree(thumbnailDir, ignore_errors=True)
-#     thumbnailDir.mkdir()
-#     for img in imgs:
-#         print('Generate thumbnail:', img.src)
-#         thumb = Image.open(PUBLIC_DIR/img.src)
-#         thumb.thumbnail(THUMBNAIL_MAX_SIZE)
-#         thumb.save(thumbnailDir/img.src.name)
 
 # This part outputs the galllery to the GalleryImages.ts
 print('OUTPUTING TO GalleryImages.ts')

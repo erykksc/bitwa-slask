@@ -13,11 +13,6 @@ export default function PreviousEvents({ id }: SectionProps) {
         viewerOpen: false,
         imageLoaded: false
     })
-    // const [currentPhoto, setCurrentPhoto] = useState(0);
-    // const [currentGalleryName, setCurrentGalleryName] = useState('');
-    // const [viewerIsOpen, setViewerIsOpen] = useState(false);
-    // eslint-disable-next-line
-    // const [imageLoaded, setImageLoaded] = useState(false);
 
     const openLightbox = (event: any, { photo, index }: any, galleryKey: string) => {
         setGalleryState({
@@ -28,9 +23,9 @@ export default function PreviousEvents({ id }: SectionProps) {
         })
     };
 
-    let galleriesTags: JSX.Element[] = [];
+    let gridGalleries: JSX.Element[] = [];
     Object.keys(galleries).forEach((galleryName, galleryIndex) => {
-        galleriesTags.push(
+        gridGalleries.push(
             <div key={`gallery_${galleryIndex}_${galleryName}`}>
                 <h3 className='mt-4 text-center'>{galleryName}</h3>
 
@@ -38,31 +33,32 @@ export default function PreviousEvents({ id }: SectionProps) {
                     photos={galleries[galleryName]}
                     onClick={(event, photo) => { openLightbox(event, photo, galleryName) }}
                 />
-
-
             </div>
         )
     });
 
     const gallery = galleries[galleryState.galleryName];
-    const currentPhoto = galleryState.photoIdx;
+    const curImgIdx = gallery ? galleryState.photoIdx : 0;
+    const nextImgIdx = gallery ? (curImgIdx + 1) % gallery.length : 0;
+    const prevImgIdx = gallery ? (curImgIdx + gallery.length - 1) % gallery.length : 0;
 
     return (
         <section id={id}>
             <h2 className='text-center'>Poprzednie wydarzenia</h2>
-            {galleriesTags}
+
+            {gridGalleries}
+
             {galleryState.viewerOpen && (
                 <Lightbox
-                    mainSrc={gallery[currentPhoto].original}
-                    nextSrc={gallery[(currentPhoto + 1) % gallery.length].original}
-                    prevSrc={gallery[(currentPhoto + gallery.length - 1) % gallery.length].original}
+                    mainSrc={gallery[curImgIdx].original}
+                    nextSrc={gallery[nextImgIdx].original}
+                    prevSrc={gallery[prevImgIdx].original}
                     onCloseRequest={() => { setGalleryState({ ...galleryState, viewerOpen: false, imageLoaded: false }) }}
                     onMovePrevRequest={() =>
-                        setGalleryState({ ...galleryState, photoIdx: (currentPhoto + gallery.length - 1) % gallery.length })
+                        setGalleryState({ ...galleryState, photoIdx: prevImgIdx })
                     }
                     onMoveNextRequest={() =>
-                        setGalleryState({ ...galleryState, photoIdx: (currentPhoto + 1) % gallery.length })
-
+                        setGalleryState({ ...galleryState, photoIdx: nextImgIdx })
                     }
                     clickOutsideToClose={true}
                     prevLabel='Poprzednie zdjęcie'
