@@ -23,8 +23,9 @@ export default function Navbar({ id, hrefs }: Props) {
     const handleScroll = () => {
         if (lastScrollTop > window.scrollY)
             setScrollDir('scrolled-up');
-        else
+        else if (lastScrollTop < window.scrollY)
             setScrollDir('scrolled-down');
+
         lastScrollTop = window.scrollY;
 
         if (window.scrollY <= 30)
