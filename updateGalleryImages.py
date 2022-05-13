@@ -6,7 +6,7 @@ from typing import Dict, List
 
 from PIL import Image
 
-THUMBNAIL_MAX_SIZE = (550, 550)
+THUMBNAIL_MAX_SIZE = (1000, 1000)
 ROOT_DIR = Path(__file__).parent.absolute()
 PUBLIC_DIR = ROOT_DIR/'public'
 
