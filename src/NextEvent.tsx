@@ -19,7 +19,7 @@ export default function NextEvent({ id }: SectionProps) {
     const streamHref = 'https://youtube.com';
     return (
         <section id={id}>
-            <h2 className='text-center'>Bitwa o Śląsk - Katowice 17.06.2022</h2>
+            <h2 className='text-center'>Bitwa o Śląsk Katowice 17.06.2022</h2>
             <section className='row pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-check' >
                     <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022</p>

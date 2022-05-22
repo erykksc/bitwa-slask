@@ -2,7 +2,7 @@
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Union
 
 from PIL import Image
 
@@ -14,7 +14,7 @@ PUBLIC_DIR = ROOT_DIR/'public'
 @dataclass
 class IImage:
     original: Path
-    thumbnail: Path | None
+    thumbnail: Union[Path, None]
     width: int
     height: int
 
