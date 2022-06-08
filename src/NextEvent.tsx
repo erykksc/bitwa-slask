@@ -26,7 +26,9 @@ export default function NextEvent({ id }: SectionProps) {
                 </InfoBox>
 
                 <InfoBox title='GDZIE' icon='bi-geo-alt'>
-                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>Katowice<br />- więcej informacji wkrótce</p>
+                    <a className='pb-3 text-center text-white' style={{ maxWidth: '90%' }} href='https://goo.gl/maps/Le3g81uDam7bnsnSA'>
+                        Miejski Dom Kultury "Bogucice-Zawodzie" Ul. Markiefki 44, Katowice
+                    </a>
                 </InfoBox>
 
                 <InfoBox title='KTO' >
