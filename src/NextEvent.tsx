@@ -58,6 +58,7 @@ export default function NextEvent({ id }: SectionProps) {
                         club: 'UKS Śląsk Ruda Śląska'
                     }}
                     category={76}
+                    key={1}
                 />
                 <Fight
                     fighter1={{
@@ -71,12 +72,13 @@ export default function NextEvent({ id }: SectionProps) {
                         club: 'JKB Jawor Team'
                     }}
                     category='+92'
+                    key={2}
                 />
                 <Fight
                     fighter1={{
-                        name: 'Krzysztof Kania',
+                        name: 'Niezapowiedziany zawodnik 1',
                         imgHref: 'person-fill.svg',
-                        club: 'Czapla Boxing'
+                        club: '?'
                     }}
                     fighter2={{
                         name: 'Kamil Rybaczuk',
@@ -84,12 +86,13 @@ export default function NextEvent({ id }: SectionProps) {
                         club: 'Sokół Gliwice'
                     }}
                     category={86}
+                    key={3}
                 />
                 <Fight
                     fighter1={{
-                        name: 'Szymon Oswald',
+                        name: 'Niezapowiedziany zawodnik 2',
                         imgHref: 'person-fill.svg',
-                        club: 'GB Spartan Chorzów'
+                        club: '?'
                     }}
                     fighter2={{
                         name: 'Patryk Polasik',
@@ -97,6 +100,7 @@ export default function NextEvent({ id }: SectionProps) {
                         club: 'Sokół Gliwice'
                     }}
                     category={86}
+                    key={4}
                 />
                 <Fight
                     fighter1={{
@@ -110,6 +114,7 @@ export default function NextEvent({ id }: SectionProps) {
                         club: 'Rybnicki Ośrodek Walk'
                     }}
                     category={75}
+                    key={5}
                 />
             </section>
         </section >
