@@ -3,7 +3,7 @@ import { useState } from "react";
 function FighterImg({ src: imgHref, className }: { src: string, className?: string }) {
     return (
         <div className={`text-center ${className}`}>
-            <img src={imgHref} style={{ maxHeight: '40vh', maxWidth: '100%', aspectRatio: 'auto' }} alt='Zdjęcie zawodnika' />
+            <img className='fighter-img' src={imgHref} alt='Zdjęcie zawodnika' />
         </div>
     )
 }
@@ -23,18 +23,18 @@ export default function Fight({ fighter1, fighter2, category }: { fighter1: Figh
     return (
         <div>
             <div className='row mt-3 justify-content-center'>
-                <FighterImg className='col d-flex justify-content-center' src={fighter1.imgHref} />
+                <FighterImg className='col ms-2 d-flex justify-content-center fighter-1-bg' src={fighter1.imgHref} />
                 <div className='col-2 text-center' style={{ display: 'flex', alignItems: 'center' }}>
                     <img src='img/vs_white.png' style={{ maxWidth: '100%', height: 'auto' }} alt='Zdjęcie "VS"' />
                 </div>
-                <FighterImg className='col d-flex justify-content-center' src={fighter2.imgHref} />
+                <FighterImg className='col me-2 d-flex justify-content-center fighter-2-bg' src={fighter2.imgHref} />
             </div>
 
             <div className='row mt-3 justify-content-center' style={{ fontSize: '1.3em' }}>
 
-                <p className='col text-center' style={{ color: '#374df2' }}>{fighter1.name}</p>
+                <p className='col text-center'>{fighter1.name}</p>
                 <div className='col-2' />
-                <p className='col text-center' style={{ color: 'red' }}>{fighter2.name}</p>
+                <p className='col text-center'>{fighter2.name}</p>
             </div>
 
             <div>

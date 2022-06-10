@@ -1,0 +1,15 @@
+.fighter-img {
+    max-height: 30vh;
+    max-width: 100%;
+    aspect-ratio: auto;
+}
+
+.fighter-1-bg {
+    background: linear-gradient(to bottom, #2063e0, #0c41a3);
+    border-radius: 10px;
+}
+
+.fighter-2-bg {
+    background: linear-gradient(to bottom, #d82a3b, #8f0000);
+    border-radius: 10px;
+}

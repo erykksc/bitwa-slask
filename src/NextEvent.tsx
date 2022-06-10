@@ -1,4 +1,5 @@
-import Fight from "./Fight";
+import Fight from './Fight';
+import './Fight.css';
 import { SectionProps } from "./interfaces";
 
 function InfoBox({ title, icon, children }: { title: string, icon?: string, children?: any }) {
