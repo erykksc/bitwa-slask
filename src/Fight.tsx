@@ -61,7 +61,7 @@ export default function Fight({ fighter1, fighter2, category }: { fighter1: Figh
                                 <p className='mb-0 align-self-center'>{fighter2.club}</p>
                             </div>
                         </div>
-                        <p className='text-center mb-0 pt-1'>
+                        <p className='text-center text-white mb-0 pt-1'>
                             Kategoria wagowa: <b>{category}kg</b>
                         </p>
                     </div>
