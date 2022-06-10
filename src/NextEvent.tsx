@@ -22,7 +22,7 @@ export default function NextEvent({ id }: SectionProps) {
             <h2 className='text-center'>Bitwa o Śląsk Katowice 17.06.2022</h2>
             <section className='row pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-check' >
-                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022</p>
+                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022<br/>Godzina 18:00</p>
                 </InfoBox>
 
                 <InfoBox title='GDZIE' icon='bi-geo-alt'>
@@ -75,7 +75,7 @@ export default function NextEvent({ id }: SectionProps) {
                 <Fight
                     fighter1={{
                         name: 'Krzysztof Kania',
-                        imgHref: 'img/fighters/krzysztof_kania.png',
+                        imgHref: 'person-fill.svg',
                         club: 'Czapla Boxing'
                     }}
                     fighter2={{
@@ -88,7 +88,7 @@ export default function NextEvent({ id }: SectionProps) {
                 <Fight
                     fighter1={{
                         name: 'Szymon Oswald',
-                        imgHref: 'img/fighters/szymon_oswald.png',
+                        imgHref: 'person-fill.svg',
                         club: 'GB Spartan Chorzów'
                     }}
                     fighter2={{
