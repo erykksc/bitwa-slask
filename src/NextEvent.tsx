@@ -21,7 +21,7 @@ export default function NextEvent({ id }: SectionProps) {
         <section id={id}>
             <h2 className='text-center'>Bitwa o Śląsk Katowice 17.06.2022</h2>
             <div className='text-center'>
-                <video width="70%" height="auto" controls autoPlay muted loop preload='metadata'>
+                <video width="90%" height="auto" controls autoPlay muted loop preload='metadata'>
                     <source src="videos/trailer.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
