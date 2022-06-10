@@ -5,7 +5,7 @@ export default function AboutUs({ id, className }: SectionProps) {
         <section id={id} className={`page-section row ${className}`}>
             <div className='col-12 col-md-6'>
                 <h2>O nas</h2>
-                <div style={{ textAlign: 'justify' }}>
+                <div style={{ textAlign: 'justify', fontFamily:'sans-serif' }}>
                     <p>
                         Z pasji jaką jest boks i setek godzin spędzonych na sali treningowej
                         poszliśmy o krok dalej i postanowiliśmy promować nasza ukochaną
