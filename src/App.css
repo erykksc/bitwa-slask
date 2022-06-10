@@ -10,3 +10,7 @@ section {
     padding-top: 2rem;
     scroll-margin-top: 50px;
 }
+
+body {
+    font-family: 'Playfair Display', serif;
+}
