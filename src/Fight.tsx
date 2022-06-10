@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-function Fighter({ imgHref, name }: { name: string, imgHref: string }) {
+function FighterImg({ src: imgHref, className }: { src: string, className?: string }) {
     return (
-        <div>
-            <img src={imgHref} style={{ maxWidth: '100%' }} alt='Zdjęcie zawodnika'/>
-            <p className=' text-center mt-2 fs-5 mb-0'>{name}</p>
+        <div className={`text-center ${className}`}>
+            <img src={imgHref} style={{ maxHeight: '40vh', maxWidth: '100%', aspectRatio: 'auto' }} alt='Zdjęcie zawodnika' />
         </div>
     )
 }
@@ -12,55 +11,66 @@ function Fighter({ imgHref, name }: { name: string, imgHref: string }) {
 interface FighterInfo {
     name: string,
     imgHref: string,
-    height: number,
-    weight: number,
+    club: string,
 }
 
-export default function Fight({ fighter1, fighter2 }: { fighter1: FighterInfo, fighter2: FighterInfo }) {
+export default function Fight({ fighter1, fighter2, category }: { fighter1: FighterInfo, fighter2: FighterInfo, category: string | number }) {
     const [expanded, setExpanded] = useState<boolean>(false);
 
     const iconName = expanded ? 'bi-caret-up-fill' : 'bi-caret-down-fill';
 
     const moreInfoID = (fighter1.name + fighter2.name).replaceAll(' ', '');
     return (
-        <div className='row mt-3 justify-content-center'>
-            <div className='col-5 d-flex justify-content-end'>
-                <Fighter imgHref={fighter1.imgHref} name={fighter1.name} />
-            </div>
-            <div className='p-0  col-2 d-flex justify-content-center align-items-center'>
-                <img src='img/vs.png' style={{ maxWidth: '70%' }} alt='Zdjęcie "VS"' />
-            </div>
-            <div className='col-5 d-flex justify-content-start'>
-                <Fighter imgHref={fighter2.imgHref} name={fighter2.name} />
-            </div>
-
-
-            <div className='d-flex text-center flex-column' style={{ width: '80%' }}>
-                <a className={iconName + ' text-decoration-none text-white'}
-                    onClick={() => { setExpanded(!expanded) }}
-                    data-bs-toggle="collapse"
-                    href={`#${moreInfoID}`}
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls={moreInfoID}
-                >
-                    {' Więcej info'}
-                </a>
-                <div className="collapse text-muted" id={moreInfoID}>
-                    <div className='row mt-2' >
-                        <p className='col mb-0'>{fighter1.height}</p>
-                        <p className='col mb-0 text-nowrap'>wzrost (cm)</p>
-                        <p className='col mb-0'>{fighter2.height}</p>
-                    </div>
-                    <div className='row pt-1' >
-                        <p className='col mb-0'>{fighter1.weight}</p>
-                        <p className='col mb-0 text-no-wrap'>waga (kg)</p>
-                        <p className='col mb-0'>{fighter2.weight}</p>
-                    </div>
+        <div>
+            <div className='row mt-3 justify-content-center'>
+                <FighterImg className='col d-flex justify-content-center' src={fighter1.imgHref} />
+                <div className='col-2 text-center' style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src='img/vs.png' style={{ maxWidth: '100%', height: 'auto' }} alt='Zdjęcie "VS"' />
                 </div>
-
+                <FighterImg className='col d-flex justify-content-center' src={fighter2.imgHref} />
             </div>
-            <hr className='mt-2' style={{ width: '60%' }} />
+
+            <div className='row mt-3 justify-content-center' style={{ fontSize: '1.3em' }}>
+
+                <p className='col text-center'>{fighter1.name}</p>
+                <div className='col-2' />
+                <p className='col text-center'>{fighter2.name}</p>
+            </div>
+
+            <div>
+                <div className='d-flex text-center flex-column' style={{ width: '80%', margin: 'auto' }}>
+                    <a className={iconName + ' text-decoration-none text-white'}
+                        onClick={() => { setExpanded(!expanded) }}
+                        data-bs-toggle="collapse"
+                        href={`#${moreInfoID}`}
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls={moreInfoID}
+                    >
+                        {' Więcej info'}
+                    </a>
+                    <div className="collapse text-muted" id={moreInfoID}>
+                        <div className='row pt-1' >
+                            {/* <div className='col text-end'>
+                                <p className='text-center px-0'>{fighter1.club}</p>
+                            </div> */}
+                            <p className='col mb-1 text-center text-md-end px-0'>{fighter1.club}</p>
+                            <div className='col-3 mb-1 text-center px-0'>
+                            <p className='align-middle'>Klub</p>
+                            </div>
+                            {/* <div className='col text-start'>
+                                <p className='text-center px-0'>{fighter2.club}</p>
+                            </div> */}
+                            <p className='col mb-1 text-center text-md-start px-0'>{fighter2.club}</p>
+                        </div>
+                        <p className='text-center mb-0 pt-1'>
+                            Kategoria wagowa: <b>{category}kg</b>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <hr className='mt-2 mb-4' style={{ width: '75%', margin: 'auto' }} />
         </div>
     );
 }

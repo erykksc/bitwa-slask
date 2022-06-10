@@ -46,21 +46,71 @@ export default function NextEvent({ id }: SectionProps) {
                 </InfoBox>
             </section >
             <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
-                {/* <Fight
+                <Fight
                     fighter1={{
-                        name: 'ALANIK',
-                        imgHref: 'https://storage.famemma.tv/content/31/fight-card/ALANIK_ZAWODNICY_FAME_14.png',
-                        weight: 80,
-                        height: 180
+                        name: 'Damian Stanisławski',
+                        imgHref: 'img/fighters/damian_stanislawski.png',
+                        club: 'Bytomska Akademia Boksu'
                     }}
                     fighter2={{
-                        name: 'MURAN',
-                        imgHref: 'https://storage.famemma.tv/content/31/fight-card/MURAN_ZAWODNICY_FAME_14.png',
-                        weight: 81,
-                        height: 179
+                        name: 'Sylwester Zięba',
+                        imgHref: 'img/fighters/sylwester_zieba.png',
+                        club: 'UKS Śląsk Ruda Śląska'
                     }}
-                    key='3'
-                /> */}
+                    category={76}
+                />
+                <Fight
+                    fighter1={{
+                        name: 'Beniamin Stępień',
+                        imgHref: 'img/fighters/beniamin_stepien.png',
+                        club: 'Bytomska Akademia Boksu'
+                    }}
+                    fighter2={{
+                        name: 'Joachim Goj Fester',
+                        imgHref: 'img/fighters/joachim_goj_fester.png',
+                        club: 'JKB Jawor Team'
+                    }}
+                    category='+92'
+                />
+                <Fight
+                    fighter1={{
+                        name: 'Krzysztof Kania',
+                        imgHref: 'img/fighters/krzysztof_kania.png',
+                        club: 'Czapla Boxing'
+                    }}
+                    fighter2={{
+                        name: 'Kamil Rybaczuk',
+                        imgHref: 'img/fighters/kamil_rybaczuk.png',
+                        club: 'Sokół Gliwice'
+                    }}
+                    category={86}
+                />
+                <Fight
+                    fighter1={{
+                        name: 'Szymon Oswald',
+                        imgHref: 'img/fighters/szymon_oswald.png',
+                        club: 'GB Spartan Chorzów'
+                    }}
+                    fighter2={{
+                        name: 'Patryk Polasik',
+                        imgHref: 'img/fighters/patryk_polasik.png',
+                        club: 'Sokół Gliwice'
+                    }}
+                    category={86}
+                />
+                <Fight
+                    fighter1={{
+                        name: 'Paweł Wiesner',
+                        imgHref: 'img/fighters/pawel_wiesner.png',
+                        club: 'Shark Top Team Bytom'
+                    }}
+                    fighter2={{
+                        name: 'Rafał Erwu Wyrobek',
+                        imgHref: 'img/fighters/rafal_erwu_wyrobek.png',
+                        club: 'Rybnicki Ośrodek Walk'
+                    }}
+                    category={75}
+                />
             </section>
         </section >
     );
