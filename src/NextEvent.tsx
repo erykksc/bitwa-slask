@@ -89,7 +89,7 @@ export default function NextEvent({ id }: SectionProps) {
                     fighter2={{
                         name: 'Kamil Rybaczuk',
                         imgHref: 'img/fighters/kamil_rybaczuk.png',
-                        club: 'Sokół Gliwice'
+                        club: 'BKS Sokół Gliwice'
                     }}
                     category={86}
                     key={3}
@@ -103,7 +103,7 @@ export default function NextEvent({ id }: SectionProps) {
                     fighter2={{
                         name: 'Patryk Polasik',
                         imgHref: 'img/fighters/patryk_polasik.png',
-                        club: 'Sokół Gliwice'
+                        club: 'BKS Sokół Gliwice'
                     }}
                     category={86}
                     key={4}
