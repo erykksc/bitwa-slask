@@ -70,7 +70,7 @@ export default function NextEvent({ id }: SectionProps) {
                     fighter1={{
                         name: 'Beniamin Stępień',
                         imgHref: 'img/fighters/beniamin_stepien.png',
-                        club: 'Bytomska Akademia Boksu'
+                        club: '?'
                     }}
                     fighter2={{
                         name: 'Joachim Goj Fester',
@@ -82,7 +82,7 @@ export default function NextEvent({ id }: SectionProps) {
                 />
                 <Fight
                     fighter1={{
-                        name: 'Niezapowiedziany zawodnik 1',
+                        name: 'Niezapowiedziany zawodnik',
                         imgHref: 'person-fill.svg',
                         club: '?'
                     }}
@@ -96,8 +96,8 @@ export default function NextEvent({ id }: SectionProps) {
                 />
                 <Fight
                     fighter1={{
-                        name: 'Niezapowiedziany zawodnik 2',
-                        imgHref: 'person-fill.svg',
+                        name: 'Łukasz Szczepaniak',
+                        imgHref: 'img/fighters/lukasz_szczepaniak.png',
                         club: '?'
                     }}
                     fighter2={{
