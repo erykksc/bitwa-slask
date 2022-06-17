@@ -17,7 +17,7 @@ function InfoBox({ title, icon, children }: { title: string, icon?: string, chil
 }
 
 export default function NextEvent({ id }: SectionProps) {
-    const streamHref = 'https://fb.me/e/4Wb5VjPA4';
+    const streamHref = 'https://youtu.be/jQznkedn2Hs';
     return (
         <section id={id}>
             <h2 className='text-center'>Bitwa o Śląsk Katowice 17.06.2022</h2>
