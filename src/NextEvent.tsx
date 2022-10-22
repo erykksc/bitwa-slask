@@ -23,12 +23,13 @@ export default function NextEvent({ id }: SectionProps) {
     return (
         <section id={id}>
             <h2 className='text-center'>{event.name}</h2>
-            <div className='text-center'>
+            <div className='text-center pb-4'>
                 <video width="100%" height="auto" controls autoPlay muted loop preload='metadata'>
                     <source src="videos/trailer.mp4" type="video/mp4" />
                     Twoja przeglądarka nie wspiera video
                 </video>
-                <img style={{maxWidth:'100%', maxHeight:'90vh'}} src='img/plakat.jpg' alt='Plakat najbliższego wydarzenia' />
+                <div className='pt-4'/>
+                <img style={{ maxWidth: '100%', maxHeight: '90vh' }} src='img/plakat.jpg' alt='Plakat najbliższego wydarzenia' />
             </div>
             <section className='row pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-check' >
