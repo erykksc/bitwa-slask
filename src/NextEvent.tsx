@@ -1,6 +1,9 @@
 import Fight from './Fight';
 import './Fight.css';
 import { SectionProps } from "./interfaces";
+import content from './content.json'
+
+const { next_event: event } = content;
 
 function InfoBox({ title, icon, children }: { title: string, icon?: string, children?: any }) {
     return (
@@ -17,24 +20,25 @@ function InfoBox({ title, icon, children }: { title: string, icon?: string, chil
 }
 
 export default function NextEvent({ id }: SectionProps) {
-    const streamHref = 'https://youtu.be/jQznkedn2Hs';
     return (
         <section id={id}>
-            <h2 className='text-center'>Bitwa o Śląsk Katowice 17.06.2022</h2>
+            <h2 className='text-center'>{event.name}</h2>
             <div className='text-center'>
-                <video width="90%" height="auto" controls autoPlay muted loop preload='metadata'>
+                <video width="100%" height="auto" controls autoPlay muted loop preload='metadata'>
                     <source src="videos/trailer.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                    Twoja przeglądarka nie wspiera video
                 </video>
+                <img style={{maxWidth:'100%', maxHeight:'90vh'}} src='img/plakat.jpg' alt='Plakat najbliższego wydarzenia' />
             </div>
             <section className='row pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-check' >
-                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>17 czerwca 2022<br />Godzina 18:00</p>
+                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>{event.date}<br />{event.time}</p>
                 </InfoBox>
 
                 <InfoBox title='GDZIE' icon='bi-geo-alt'>
-                    <a className='pb-3 text-center text-white' style={{ maxWidth: '90%' }} href='https://goo.gl/maps/Le3g81uDam7bnsnSA'>
-                        Miejski Dom Kultury "Bogucice-Zawodzie" Ul. Markiefki 44, Katowice
+                    <a className='pb-3 text-center text-white' style={{ maxWidth: '90%' }} href={event.location_url}>
+                        {event.location_name}<br />
+                        {event.location_address}
                     </a>
                 </InfoBox>
 
@@ -46,10 +50,10 @@ export default function NextEvent({ id }: SectionProps) {
                 </InfoBox>
 
                 <InfoBox title='STREAM'>
-                    <a href={streamHref}>
+                    <a href={event.stream_url}>
                         <i className='bi-play-circle' style={{ fontSize: '5rem', color: 'white' }} />
                     </a>
-                    <a className='btn bg-white text-black rounded-pill' href={streamHref}>Przejdź do streamu</a>
+                    <a className='btn bg-white text-black rounded-pill' href={event.stream_url}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
             <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
