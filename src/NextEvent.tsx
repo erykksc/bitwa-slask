@@ -1,7 +1,7 @@
+import content from './content.json';
 import Fight from './Fight';
 import './Fight.css';
 import { SectionProps } from "./interfaces";
-import content from './content.json'
 
 const { next_event: event } = content;
 
