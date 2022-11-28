@@ -1,5 +1,5 @@
 .cover-container {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("../public/img/cover.png");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("../public/img/cover.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;

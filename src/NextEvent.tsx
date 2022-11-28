@@ -57,7 +57,7 @@ export default function NextEvent({ id }: SectionProps) {
                     <a className='btn bg-white text-black rounded-pill' href={event.stream_url}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
-            <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
+            {/* <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
                 <Fight
                     fighter1={{
                         name: 'Damian Stanisławski',
@@ -128,7 +128,7 @@ export default function NextEvent({ id }: SectionProps) {
                     category={75}
                     key={5}
                 />
-            </section>
+            </section> */}
         </section >
     );
 }
