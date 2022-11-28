@@ -1,9 +1,9 @@
 import content from './content.json';
 import Fight from './Fight';
 import './Fight.css';
-import { SectionProps } from "./interfaces";
+import { SectionProps } from './interfaces';
 
-const { next_event: event } = content;
+const { next_event: event, fights } = content;
 
 function InfoBox({ title, icon, children }: { title: string, icon: string, children?: any }) {
     return (
@@ -52,78 +52,16 @@ export default function NextEvent({ id }: SectionProps) {
                     <a className='px-4 btn bg-white text-black rounded-pill' href={event.stream_url}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
-            {/* <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
-                <Fight
-                    fighter1={{
-                        name: 'Damian Stanisławski',
-                        imgHref: 'img/fighters/damian_stanislawski.png',
-                        club: 'Bytomska Akademia Boksu'
-                    }}
-                    fighter2={{
-                        name: 'Sylwester Zięba',
-                        imgHref: 'img/fighters/sylwester_zieba.png',
-                        club: 'UKS Śląsk Ruda Śląska'
-                    }}
-                    category={76}
-                    key={1}
-                />
-                <Fight
-                    fighter1={{
-                        name: 'Beniamin Stępień',
-                        imgHref: 'img/fighters/beniamin_stepien.png',
-                        club: '?'
-                    }}
-                    fighter2={{
-                        name: 'Joachim Goj Fester',
-                        imgHref: 'img/fighters/joachim_goj_fester.png',
-                        club: 'JKB Jawor Team'
-                    }}
-                    category='+92'
-                    key={2}
-                />
-                <Fight
-                    fighter1={{
-                        name: 'Niezapowiedziany zawodnik',
-                        imgHref: 'person-fill.svg',
-                        club: '?'
-                    }}
-                    fighter2={{
-                        name: 'Kamil Rybaczuk',
-                        imgHref: 'img/fighters/kamil_rybaczuk.png',
-                        club: 'BKS Sokół Gliwice'
-                    }}
-                    category={86}
-                    key={3}
-                />
-                <Fight
-                    fighter1={{
-                        name: 'Łukasz Szczepaniak',
-                        imgHref: 'img/fighters/lukasz_szczepaniak.png',
-                        club: '?'
-                    }}
-                    fighter2={{
-                        name: 'Patryk Polasik',
-                        imgHref: 'img/fighters/patryk_polasik.png',
-                        club: 'BKS Sokół Gliwice'
-                    }}
-                    category={86}
-                    key={4}
-                />
-                <Fight
-                    fighter1={{
-                        name: 'Paweł Wiesner',
-                        imgHref: 'img/fighters/pawel_wiesner.png',
-                        club: 'Shark Top Team Bytom'
-                    }}
-                    fighter2={{
-                        name: 'Rafał Erwu Wyrobek',
-                        imgHref: 'img/fighters/rafal_erwu_wyrobek.png',
-                        club: 'Rybnicki Ośrodek Walk'
-                    }}
-                    category={75}
-                    key={5}
-                />
-            </section> */}
+            <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
+                {fights.map((v, i) =>
+                    <Fight
+                        fighter1={v['fighter-1']}
+                        fighter2={v['fighter-2']}
+                        category=''
+                        key={i}
+                    />
+                )}
+            </section>
         </section >
     );
 }
