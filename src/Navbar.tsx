@@ -71,7 +71,7 @@ export default function Navbar({ id, hrefs }: Props) {
         <nav className={`navbar navbar-expand-md navbar-dark fixed-top ${scrollDir} ${scrolled2top && !smallScreen ? '' : 'bg-black'}`} id={id}>
             <div className="container">
                 <a className="navbar-brand text-white fs-4" href="#page-top">
-                    <img src='favicon.ico' alt="" width="30" height="24" className="d-inline-block align-text-top" />
+                    {/* <img src='favicon.ico' alt="" width="30" height="24" className="d-inline-block align-text-top" /> */}
                     Bitwa o Śląsk
                 </a>
                 <button id='navbar-toggler' className="navbar-toggler navbar-toggler-right nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

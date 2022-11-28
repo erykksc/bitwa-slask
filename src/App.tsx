@@ -19,7 +19,7 @@ function App() {
 					{ href: '#gallery', text: 'GALERIA' },
 					{ href: '#contact', text: 'KONTAKT' },
 				]} />
-				<Cover learnMoreHref="#social-media" />
+				<Cover />
 				<div className='container'>
 					<SocialMedia id='social-media' />
 					<AboutUs id='about-us' className='' />

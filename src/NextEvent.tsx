@@ -5,15 +5,16 @@ import { SectionProps } from "./interfaces";
 
 const { next_event: event } = content;
 
-function InfoBox({ title, icon, children }: { title: string, icon?: string, children?: any }) {
+function InfoBox({ title, icon, children }: { title: string, icon: string, children?: any }) {
     return (
-        <div className='col-12 col-md-6 col-lg-3 p-1 d-flex justify-content-center'>
-            <div className='d-flex flex-column align-items-center bg-primary rounded' style={{ width: '100%', aspectRatio: '1', maxWidth: '280px' }}>
-                <h3 className='pt-4'>{title}</h3>
-                {icon &&
-                    <i className={icon} style={{ fontSize: '5rem' }} />
-                }
-                {children}
+        <div className='col-12 col-md-6 col-lg-3 pt-1' style={{ maxWidth: '80%' }}>
+            <div className='bg-primary rounded'>
+                <h3 className='text-center py-2'>{title}</h3>
+                <i className={`d-flex justify-content-center ${icon}`} style={{ fontSize: '5rem' }} />
+
+                <div className='d-flex flex-column justify-content-center align-items-center' style={{ height: '100px' }}>
+                    {children}
+                </div>
             </div>
         </div>
     );
@@ -28,33 +29,27 @@ export default function NextEvent({ id }: SectionProps) {
                     <source src="videos/trailer.mp4" type="video/mp4" />
                     Twoja przeglądarka nie wspiera video
                 </video>
-                <div className='pt-4'/>
+                <div className='pt-4' />
                 <img style={{ maxWidth: '100%', maxHeight: '90vh' }} src='img/plakat.jpg' alt='Plakat najbliższego wydarzenia' />
             </div>
-            <section className='row pt-2'>
+            <section className='row justify-content-center pt-2'>
                 <InfoBox title='KIEDY' icon='bi-calendar-check' >
-                    <p className='pb-3 text-center' style={{ maxWidth: '80%' }}>{event.date}<br />{event.time}</p>
+                    <p className='text-center'>{event.date}<br />{event.time}</p>
                 </InfoBox>
 
                 <InfoBox title='GDZIE' icon='bi-geo-alt'>
-                    <a className='pb-3 text-center text-white' style={{ maxWidth: '90%' }} href={event.location_url}>
+                    <a className='text-center text-white' href={event.location_url}>
                         {event.location_name}<br />
                         {event.location_address}
                     </a>
                 </InfoBox>
 
-                <InfoBox title='KTO' >
-                    <a href='#fighters'>
-                        <i className='bi-person' style={{ fontSize: '5rem', color: 'white' }} />
-                    </a>
-                    <a className='btn bg-white text-black rounded-pill' href='#fighters'>Zobacz zawodników</a>
+                <InfoBox title='KTO' icon='bi-person'>
+                    <a className='px-4 btn bg-white text-black rounded-pill' href='#fighters'>Zobacz zawodników</a>
                 </InfoBox>
 
-                <InfoBox title='STREAM'>
-                    <a href={event.stream_url}>
-                        <i className='bi-play-circle' style={{ fontSize: '5rem', color: 'white' }} />
-                    </a>
-                    <a className='btn bg-white text-black rounded-pill' href={event.stream_url}>Przejdź do streamu</a>
+                <InfoBox title='STREAM' icon='bi-play-circle'>
+                    <a className='px-4 btn bg-white text-black rounded-pill' href={event.stream_url}>Przejdź do streamu</a>
                 </InfoBox>
             </section >
             {/* <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>

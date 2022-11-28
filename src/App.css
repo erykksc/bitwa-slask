@@ -12,5 +12,7 @@ section {
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Bebas Neue', serif;
+    /* font-family: bebas-neue, sans-serif; */
+    font-style: normal;
 }
