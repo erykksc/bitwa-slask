@@ -11,8 +11,56 @@
     "fights": [
         {
             "fighter-1": {
+                "name": "",
+                "imgHref": "person-fill.svg",
+                "club": ""
+            },
+            "fighter-2": {
+                "name": "Bartosz Bonk",
+                "imgHref": "img/fighters/compressed/FB-bonk.jpeg",
+                "club": ""
+            }
+        },
+        {
+            "fighter-1": {
+                "name": "Kamil Rybaczuk",
+                "imgHref": "img/fighters/compressed/FB-kamil-rybaczuk.jpeg",
+                "club": ""
+            },
+            "fighter-2": {
+                "name": "Krzysztof Kania",
+                "imgHref": "img/fighters/compressed/FB-kania.jpeg",
+                "club": ""
+            }
+        },
+        {
+            "fighter-1": {
+                "name": "Piotr Wojtasiok",
+                "imgHref": "img/fighters/compressed/FB-piotr-wojtasiok.jpeg",
+                "club": ""
+            },
+            "fighter-2": {
+                "name": "Mariusz Maj",
+                "imgHref": "img/fighters/compressed/FB-mariusz-maj.jpeg",
+                "club": ""
+            }
+        },
+        {
+            "fighter-1": {
+                "name": "Michał Lewicki",
+                "imgHref": "img/fighters/compressed/FB-michal-lewicki.jpeg",
+                "club": ""
+            },
+            "fighter-2": {
+                "name": "Arkadiusz Żurek",
+                "imgHref": "img/fighters/compressed/FB-arkadiusz-zurek.jpeg",
+                "club": ""
+            }
+        },
+        {
+            "fighter-1": {
                 "name": "Szymon Oswald",
-                "imgHref": "img/fighters/oswald.jpg",
+                "imgHref": "img/fighters/compressed/FB-oswald.jpeg",
                 "club": ""
             },
             "fighter-2": {
@@ -24,12 +72,12 @@
         {
             "fighter-1": {
                 "name": "Mariusz Kulawik",
-                "imgHref": "img/fighters/mariusz-kulawik.jpg",
+                "imgHref": "person-fill.svg",
                 "club": ""
             },
             "fighter-2": {
                 "name": "Jakub Żuraw",
-                "imgHref": "img/fighters/zuraw.jpg",
+                "imgHref": "img/fighters/compressed/FB-zuraw.jpeg",
                 "club": ""
             }
         },
@@ -41,38 +89,26 @@
             },
             "fighter-2": {
                 "name": "Joachim Goj",
-                "imgHref": "img/fighters/goj.jpg",
-                "club": ""
-            }
-        },
-        {
-            "fighter-1": {
-                "name": "",
-                "imgHref": "person-fill.svg",
-                "club": ""
-            },
-            "fighter-2": {
-                "name": "Bartosz Bonk",
-                "imgHref": "img/fighters/bonk.jpg",
+                "imgHref": "img/fighters/compressed/FB-goj.jpeg",
                 "club": ""
             }
         },
         {
             "fighter-1": {
                 "name": "Lucio Pagos",
-                "imgHref": "img/fighters/lucio-pagos.jpg",
+                "imgHref": "img/fighters/compressed/FB-lucio-pagos.jpeg",
                 "club": ""
             },
             "fighter-2": {
                 "name": "Mariusz Dymek",
-                "imgHref": "img/fighters/mariusz-dymek.jpg",
+                "imgHref": "img/fighters/compressed/FB-dymek.jpeg",
                 "club": ""
             }
         },
         {
             "fighter-1": {
                 "name": "Mateusz Kowalczyk",
-                "imgHref": "img/fighters/mateusz-kowalczyk.jpg",
+                "imgHref": "img/fighters/compressed/FB-mateusz-kowalczyk.jpeg",
                 "club": ""
             },
             "fighter-2": {
@@ -84,7 +120,7 @@
         {
             "fighter-1": {
                 "name": "Rafał Wyrobek",
-                "imgHref": "img/fighters/wyrobek.jpg",
+                "imgHref": "img/fighters/compressed/FB-wyrobek.jpeg",
                 "club": ""
             },
             "fighter-2": {
@@ -96,84 +132,36 @@
         {
             "fighter-1": {
                 "name": "Szczepan Nowak",
-                "imgHref": "img/fighters/szczepan-nowak.jpg",
+                "imgHref": "img/fighters/compressed/FB-szczepan-nowak.jpeg",
                 "club": ""
             },
             "fighter-2": {
                 "name": "",
                 "imgHref": "person-fill.svg",
-                "club": ""
-            }
-        },
-        {
-            "fighter-1": {
-                "name": "Kamil Rybaczuk",
-                "imgHref": "img/fighters/kamil-rybaczuk.jpg",
-                "club": ""
-            },
-            "fighter-2": {
-                "name": "Krzysztof Kania",
-                "imgHref": "img/fighters/kania.jpg",
                 "club": ""
             }
         },
         {
             "fighter-1": {
                 "name": "Damian Stanisławski",
-                "imgHref": "img/fighters/damian-stanislawski.jpg",
+                "imgHref": "img/fighters/compressed/FB-samian-stanislawski.jpeg",
                 "club": ""
             },
             "fighter-2": {
                 "name": "",
                 "imgHref": "person-fill.svg",
-                "club": ""
-            }
-        },
-        {
-            "fighter-1": {
-                "name": "Piotr Wojtasiok",
-                "imgHref": "img/fighters/piotr-wojtasiok.jpg",
-                "club": ""
-            },
-            "fighter-2": {
-                "name": "Mariusz Maj",
-                "imgHref": "img/fighters/mariusz-maj.jpg",
-                "club": ""
-            }
-        },
-        {
-            "fighter-1": {
-                "name": "Michał Lewicki",
-                "imgHref": "img/fighters/michal-lewicki.jpg",
-                "club": ""
-            },
-            "fighter-2": {
-                "name": "Arkadiusz Żurek",
-                "imgHref": "img/fighters/arkadiusz-zurek.jpg",
                 "club": ""
             }
         },
         {
             "fighter-1": {
                 "name": "Jacek Pniok",
-                "imgHref": "img/fighters/pniok.jpg",
+                "imgHref": "img/fighters/compressed/FB-pniok.jpeg",
                 "club": ""
             },
             "fighter-2": {
-                "name": "",
+                "name": "Maciej Mol",
                 "imgHref": "person-fill.svg",
-                "club": ""
-            }
-        },
-        {
-            "fighter-1": {
-                "name": "Ludwik Drożdżyński",
-                "imgHref": "img/fighters/ludwik.jpg",
-                "club": ""
-            },
-            "fighter-2": {
-                "name": "Rafał Jackiewicz",
-                "imgHref": "img/fighters/rafal-jackiewicz.jpg",
                 "club": ""
             }
         }

@@ -22,20 +22,19 @@ export default function Fight({ fighter1, fighter2, category }: { fighter1: Figh
     const moreInfoID = (fighter1.name + fighter2.name).replaceAll(' ', '');
     return (
         <div>
-            <div className='row mt-3 justify-content-center'>
+            <div className='row justify-content-center mx-0'>
                 <FighterImg className='col fighter-1-bg' src={fighter1.imgHref} />
                 <div className='col-2 text-center' style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src='img/vs_white.png' style={{ maxWidth: '100%', height: 'auto' }} alt='Zdjęcie "VS"' />
+                    <img src='img/vs.png' style={{ maxWidth: '100%', height: 'auto' }} alt='Zdjęcie "VS"' />
                 </div>
                 <FighterImg className='col fighter-2-bg' src={fighter2.imgHref} />
             </div>
 
-            <div className='row mt-3 justify-content-center' style={{ fontSize: '1.3em' }}>
-
-                {/* <p className='col text-center'>{fighter1.name}</p>
+            {/* <div className='row mt-2 mx-0 justify-content-center' style={{ fontSize: '1.3em' }}>
+                <p className='col text-center mb-0'>{fighter1.name}</p>
                 <div className='col-2' />
-                <p className='col text-center'>{fighter2.name}</p> */}
-            </div>
+                <p className='col text-center'>{fighter2.name}</p>
+            </div> */}
 
             {/* <div>
                 <div className='d-flex text-center flex-column' style={{ width: '95%', margin: 'auto' }}>
@@ -68,7 +67,7 @@ export default function Fight({ fighter1, fighter2, category }: { fighter1: Figh
 
                 </div>
             </div> */}
-            <hr className='mt-2 mb-4' style={{ width: '75%', margin: 'auto' }} />
+            <hr className='my-4' style={{ width: '75%', margin: 'auto' }} />
         </div>
     );
 }

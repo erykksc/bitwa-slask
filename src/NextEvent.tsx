@@ -53,6 +53,10 @@ export default function NextEvent({ id }: SectionProps) {
                 </InfoBox>
             </section >
             <section className='mt-3 d-flex flex-column justify-content-center' id='fighters'>
+                <h3 className='text-center'>Walka wieczoru</h3>
+                <img src='img/fighters/ludwik-vs-rafal.jpg' alt='zdjęcie Ludwik Drożdżyński vs Rafał Jackiewicz' />
+                <hr className='my-4' style={{ width: '75%', margin: 'auto' }} />
+
                 {fights.map((v, i) =>
                     <Fight
                         fighter1={v['fighter-1']}
