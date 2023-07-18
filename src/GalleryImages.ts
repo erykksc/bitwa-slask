@@ -8,7 +8,7 @@ interface MyImage {
 }
 export const galleries: Record<string, MyImage[]> = {
 	"rogoźnik 06.05.2023": [
-		{ src: "img/gallery/2023-05-06_rogoźnik/thumbnails/_plakat.jpg", original: "img/gallery/2023-05-06_rogoźnik/_plakat.jpg", width: 707, height: 1000 },
+		{ src: "img/gallery/2023-05-06_rogoźnik/thumbnails/_plakat.jpg", original: "img/gallery/2023-05-06_rogoźnik/_plakat.jpg", width: 707, height: 1000 },
 	],
 	"katowice 17.06.2022": [
 		{ src: "img/gallery/2022-06-17_katowice/thumbnails/_plakat.png", original: "img/gallery/2022-06-17_katowice/_plakat.png", width: 640, height: 960 },
@@ -46,7 +46,7 @@ export const galleries: Record<string, MyImage[]> = {
 		{ src: "img/gallery/2019-10-05_katowice/thumbnails/71186891_2129818990657958_4225960318448173056_n.jpg", original: "img/gallery/2019-10-05_katowice/71186891_2129818990657958_4225960318448173056_n.jpg", width: 1000, height: 667 },
 	],
 	"radzionków 16.03.2019": [
-		{ src: "img/gallery/2019-03-16_radzionków/thumbnails/_plakat.jpg", original: "img/gallery/2019-03-16_radzionków/_plakat.jpg", width: 701, height: 1000 },
+		{ src: "img/gallery/2019-03-16_radzionków/thumbnails/_plakat.jpg", original: "img/gallery/2019-03-16_radzionków/_plakat.jpg", width: 701, height: 1000 },
 	],
 	"zabrze 27.10.2018": [
 		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/__plakat.jpg", original: "img/gallery/2018-10-27_zabrze/__plakat.jpg", width: 707, height: 1000 },
@@ -150,7 +150,7 @@ export const galleries: Record<string, MyImage[]> = {
 		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/45843889_1928376710802188_4396950791932346368_n.jpg", original: "img/gallery/2018-10-27_zabrze/45843889_1928376710802188_4396950791932346368_n.jpg", width: 1000, height: 666 },
 	],
 	"siemianowice śląskie 20.05.2018": [
-		{ src: "img/gallery/2018-05-20_siemianowice_śląskie/thumbnails/_plakat.jpg", original: "img/gallery/2018-05-20_siemianowice_śląskie/_plakat.jpg", width: 725, height: 1000 },
+		{ src: "img/gallery/2018-05-20_siemianowice_śląskie/thumbnails/_plakat.jpg", original: "img/gallery/2018-05-20_siemianowice_śląskie/_plakat.jpg", width: 725, height: 1000 },
 	],
 	"mysłowice 28.01.2018": [
 		{ src: "img/gallery/2018-01-28_mysłowice/thumbnails/_plakat.jpg", original: "img/gallery/2018-01-28_mysłowice/_plakat.jpg", width: 682, height: 960 },

@@ -37,15 +37,14 @@ galleriesDir: Path = PUBLIC_DIR/'img'/'gallery'
 
 galleriesNames = filterHiddenItems(os.listdir(galleriesDir))
 
-galleriesNames = list(map(lambda x: unicodedata.normalize('NFC', x),galleriesNames))
-
 galleriesNames = sorted(galleriesNames, reverse=True)
 
 galleries: List[Gallery] = list()
 for gName in galleriesNames:
     # create gallery object
     date, cityName = gName.split('_', 1)
-    fCityName = cityName.replace('_', ' ')
+    # galleriesNames = list(map(lambda x: unicodedata.normalize('NFC', x),galleriesNames))
+    fCityName = unicodedata.normalize('NFC',cityName.replace('_', ' '))
     # Format date from "YYYY-MM-DD" to "DD.MM.YYYY"
     fDate = '.'.join(reversed(date.split('-')))
     galleries.append(Gallery(name=gName, city=fCityName,
