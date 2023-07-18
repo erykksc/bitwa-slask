@@ -3,6 +3,7 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Union
+import unicodedata
 
 from PIL import Image
 
@@ -19,6 +20,15 @@ class IImage:
     height: int
 
 
+@dataclass
+class Gallery:
+    name: str
+    date: str
+    city: str
+    path: Path
+    images: List[IImage]
+
+
 def filterHiddenItems(files: List[str]):
     return list(filter(lambda p: p[0] != '.', files))
 
@@ -27,33 +37,47 @@ galleriesDir: Path = PUBLIC_DIR/'img'/'gallery'
 
 galleriesNames = filterHiddenItems(os.listdir(galleriesDir))
 
-galleries: Dict[str, List[IImage]] = dict()
+galleriesNames = list(map(lambda x: unicodedata.normalize('NFC', x),galleriesNames))
+
+galleriesNames = sorted(galleriesNames, reverse=True)
+
+galleries: List[Gallery] = list()
+for gName in galleriesNames:
+    # create gallery object
+    date, cityName = gName.split('_', 1)
+    fCityName = cityName.replace('_', ' ')
+    # Format date from "YYYY-MM-DD" to "DD.MM.YYYY"
+    fDate = '.'.join(reversed(date.split('-')))
+    galleries.append(Gallery(name=gName, city=fCityName,
+                     date=fDate, images=list(), path=galleriesDir/gName))
+
 
 print('READING GALLERIES FILES')
-for galleryName in galleriesNames:
-    galleryPath = galleriesDir/galleryName
-    galleries[galleryName] = list()
-
+for gallery in galleries:
     sortedPhotoNames = sorted(filterHiddenItems(
-        os.listdir(galleryPath)), reverse=True)
+        os.listdir(gallery.path)), reverse=True)
 
     for photoName in sortedPhotoNames:
-        if (galleryPath/photoName).is_dir():
+        if (gallery.path/photoName).is_dir():
             continue
 
-        print('Handling:', photoName)
-        thumbnailPath = galleryPath/'thumbnails'/photoName
-
-        photo = Image.open(galleryPath/photoName)
+        print(f'Gallery: {gallery.name}, handling:', photoName)
+        # Create thumbnail
+        thumbnailPath = gallery.path/'thumbnails'/photoName
+        thumbnailPath.parent.mkdir(exist_ok=True)
+        # remove old thumbnail if exists
+        if thumbnailPath.exists():
+            thumbnailPath.unlink()
+        photo = Image.open(gallery.path/photoName)
         photo.thumbnail(THUMBNAIL_MAX_SIZE)
         w, h = photo.size
         photo.save(thumbnailPath)
 
-        galleries[galleryName].append(
+        gallery.images.append(
             IImage(
-                original=Path(f'img/gallery/{galleryName}/{photoName}'),
+                original=Path(f'img/gallery/{gallery.name}/{photoName}'),
                 thumbnail=Path(
-                    f'img/gallery/{galleryName}/thumbnails/{photoName}'),
+                    f'img/gallery/{gallery.name}/thumbnails/{photoName}'),
                 width=w,
                 height=h,
             )
@@ -64,6 +88,8 @@ print('OUTPUTING TO GalleryImages.ts')
 with open(ROOT_DIR/'src'/'GalleryImages.ts', 'w', encoding='utf8') as f:
     f.write(
         """\
+// This file is generated automatically by updateGalleryImages.py, do not change it manually
+
 interface MyImage {
     src: string,
     original: string,
@@ -73,10 +99,9 @@ interface MyImage {
 """
     )
     f.write('export const galleries: Record<string, MyImage[]> = {\n')
-    for gName, imgs in galleries.items():
-        fixedGName = gName.capitalize().replace('_', ' ').replace('-', '.')
-        f.write(f'\t"{fixedGName}": [\n')
-        for img in imgs:
+    for gallery in galleries:
+        f.write(f'\t"{gallery.city} {gallery.date}": [\n')
+        for img in gallery.images:
             f.write(
                 f'\t\t{{ src: "{img.thumbnail}", original: "{img.original}", width: {img.width}, height: {img.height} }},\n'
             )
