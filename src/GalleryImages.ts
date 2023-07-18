@@ -7,11 +7,11 @@ interface MyImage {
     height: number
 }
 export const galleries: Record<string, MyImage[]> = {
-	"zabrze 10.12.2023": [
-		{ src: "img/gallery/2023-12-10_zabrze/thumbnails/_plakat.jpg", original: "img/gallery/2023-12-10_zabrze/_plakat.jpg", width: 707, height: 1000 },
-	],
 	"rogoźnik 06.05.2023": [
 		{ src: "img/gallery/2023-05-06_rogoźnik/thumbnails/_plakat.jpg", original: "img/gallery/2023-05-06_rogoźnik/_plakat.jpg", width: 707, height: 1000 },
+	],
+	"zabrze 10.12.2022": [
+		{ src: "img/gallery/2022-12-10_zabrze/thumbnails/_plakat.jpg", original: "img/gallery/2022-12-10_zabrze/_plakat.jpg", width: 707, height: 1000 },
 	],
 	"katowice 17.06.2022": [
 		{ src: "img/gallery/2022-06-17_katowice/thumbnails/_plakat.png", original: "img/gallery/2022-06-17_katowice/_plakat.png", width: 640, height: 960 },
