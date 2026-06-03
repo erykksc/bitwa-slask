@@ -29,6 +29,18 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## GitHub Pages Deployment
+
+This repository deploys automatically to GitHub Pages from the `main` branch using `.github/workflows/deploy-pages.yml`.
+
+Before the first deployment, set the repository Pages source in GitHub to `GitHub Actions`:
+
+`Settings` -> `Pages` -> `Build and deployment` -> `Source` -> `GitHub Actions`.
+
+The app uses `"homepage": "https://bitwa-slask.eryk.one"` in `package.json`, and `public/CNAME` configures GitHub Pages for the custom domain.
+
+Note: the page references files in `public/img/gallery`, `public/img/fighters`, and `public/videos`. These folders are currently ignored by `.gitignore`, so they must either be committed, restored before deployment, or moved to an external hosting location to avoid broken media links on GitHub Pages.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
