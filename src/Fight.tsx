@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function FighterImg({ src: imgHref, className }: { src: string, className?: string }) {
     return (
         <div className={`p-0 text-center ${className}`}>
@@ -15,11 +13,6 @@ interface FighterInfo {
 }
 
 export default function Fight({ fighter1, fighter2, category }: { fighter1: FighterInfo, fighter2: FighterInfo, category: string | number }) {
-    const [expanded, setExpanded] = useState<boolean>(false);
-
-    const iconName = expanded ? 'bi-caret-up-fill' : 'bi-caret-down-fill';
-
-    const moreInfoID = (fighter1.name + fighter2.name).replaceAll(' ', '');
     return (
         <div>
             <div className='row justify-content-center mx-0'>
