@@ -17,7 +17,7 @@ export const galleries: Record<string, MyImage[]> = {
 		{ src: "img/gallery/2022-06-17_katowice/thumbnails/_plakat.png", original: "img/gallery/2022-06-17_katowice/_plakat.png", width: 640, height: 960 },
 	],
 	"katowice 05.10.2019": [
-		{ src: "img/gallery/2019-10-05_katowice/thumbnails/_plakat.jpg", original: "img/gallery/2019-10-05_katowice/_plakat.jpg", width: 715, height: 1000 },
+		{ src: "img/gallery/2019-10-05_katowice/thumbnails/_plakat.jpg", original: "img/gallery/2019-10-05_katowice/_plakat.jpg", width: 480, height: 672 },
 		{ src: "img/gallery/2019-10-05_katowice/thumbnails/72817096_2129818810657976_6978212186774568960_n.jpg", original: "img/gallery/2019-10-05_katowice/72817096_2129818810657976_6978212186774568960_n.jpg", width: 1000, height: 667 },
 		{ src: "img/gallery/2019-10-05_katowice/thumbnails/72700545_2129819143991276_6765870429589471232_n.jpg", original: "img/gallery/2019-10-05_katowice/72700545_2129819143991276_6765870429589471232_n.jpg", width: 1000, height: 667 },
 		{ src: "img/gallery/2019-10-05_katowice/thumbnails/72657100_2129819570657900_8356222606558363648_n.jpg", original: "img/gallery/2019-10-05_katowice/72657100_2129819570657900_8356222606558363648_n.jpg", width: 1000, height: 667 },
@@ -52,7 +52,7 @@ export const galleries: Record<string, MyImage[]> = {
 		{ src: "img/gallery/2019-03-16_radzionków/thumbnails/_plakat.jpg", original: "img/gallery/2019-03-16_radzionków/_plakat.jpg", width: 701, height: 1000 },
 	],
 	"zabrze 27.10.2018": [
-		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/__plakat.jpg", original: "img/gallery/2018-10-27_zabrze/__plakat.jpg", width: 707, height: 1000 },
+		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/__plakat.jpg", original: "img/gallery/2018-10-27_zabrze/__plakat.jpg", width: 480, height: 679 },
 		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/5wykaz_walk.jpg", original: "img/gallery/2018-10-27_zabrze/5wykaz_walk.jpg", width: 663, height: 1000 },
 		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/46264315_1928380397468486_6353034049929347072_n.jpg", original: "img/gallery/2018-10-27_zabrze/46264315_1928380397468486_6353034049929347072_n.jpg", width: 1000, height: 667 },
 		{ src: "img/gallery/2018-10-27_zabrze/thumbnails/46261065_1928383867468139_2478726536778219520_n.jpg", original: "img/gallery/2018-10-27_zabrze/46261065_1928383867468139_2478726536778219520_n.jpg", width: 1000, height: 678 },
